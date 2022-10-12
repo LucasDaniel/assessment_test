@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Middleware\LogAcessoMiddleware;
+use App\Models\BookStore;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,12 @@ class HomeController extends Controller
 
     public function home(Request $request) {
 
-        return view('site.home');
+        $msg = $request->get('msg') ? $request->get('msg') : '';
+
+        $bookStore = new BookStore();
+        $bookStoreList = $bookStore->get();
+
+        return view('site.home', ['msg' => $msg, 'bookStoreList' => $bookStoreList]);
 
     }
 }
