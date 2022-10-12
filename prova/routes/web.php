@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', function () {
-    return "Login";
-})->name('site.login');
+Route::get('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('site.login');
 
 Route::get('/', function () {
     return redirect()->route('site.login');
