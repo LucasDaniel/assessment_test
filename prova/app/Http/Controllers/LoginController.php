@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     public function login() {
-        echo "Login Controller";
+        return view('site.login');
     }
 }
