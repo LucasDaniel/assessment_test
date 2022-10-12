@@ -39,6 +39,9 @@ class LoginController extends Controller
                        ->first();
 
         if (isset($usuario->name)) {
+            session_start();
+            $_SESSION['nome'] = $usuario->name;
+            $_SESSION['email'] = $usuario->email;
             
         } else {
             return redirect()->route('site.login', ['erro'=>1]);

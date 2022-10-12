@@ -19,3 +19,4 @@ Route::post('/login', [\App\Http\Controllers\LoginController::class, 'autenticar
 Route::get('/', function () {
     return redirect()->route('site.login');
 });
+
