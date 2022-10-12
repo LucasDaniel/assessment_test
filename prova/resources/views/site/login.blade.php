@@ -15,5 +15,6 @@
 
         <p><input type="submit" value="Logar" /></p>
     </form>
+    {{ isset($erro) && $erro != '' ? $erro : ''}}
 </body>
 </html>

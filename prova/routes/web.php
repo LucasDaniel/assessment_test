@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('site.login');
+Route::get('/login/{erro?}', [\App\Http\Controllers\LoginController::class, 'login'])->name('site.login');
 Route::post('/login', [\App\Http\Controllers\LoginController::class, 'autenticar'])->name('site.login');
 
 Route::get('/', function () {
