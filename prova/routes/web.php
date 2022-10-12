@@ -18,6 +18,8 @@ Route::post('/login', [\App\Http\Controllers\LoginController::class, 'autenticar
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'home'])->name('site.home');
 
+Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout'])->name('site.logout');
+
 Route::get('/', function () {
     return redirect()->route('site.login');
 });
