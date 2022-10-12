@@ -8,8 +8,8 @@
     <form method="post" action="{{ route('site.login') }}">
         @csrf
         <h1>Faça o Login</h1>
-        <p><input id="login" value="{{ old('usuario') }}" name="login" required="required" type="email" placeholder="Usuario" /></p>
-        {{ $errors->has('usuario') ? $errors->first('usuario') : '' }}
+        <p><input id="login" value="{{ old('login') }}" name="login" required="required" type="email" placeholder="Usuario" /></p>
+        {{ $errors->has('login') ? $errors->first('login') : '' }}
         <p><input id="senha" value="{{ old('senha') }}" name="senha" required="required" type="password" placeholder="****"/></p>
         {{ $errors->has('senha') ? $errors->first('senha') : '' }}
 

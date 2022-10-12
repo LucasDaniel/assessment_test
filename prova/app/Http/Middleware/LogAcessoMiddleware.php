@@ -17,6 +17,11 @@ class LogAcessoMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        session_start();
+
+        if (isset($_SESSION['email']) && $_SESSION['email'] != '') {
+            return $next($request);
+        }
+        return redirect()->route("site.login",['erro' => 2]);
     }
 }
