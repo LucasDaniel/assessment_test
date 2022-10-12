@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('book_stores', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name')->nullable(false)->change();
+            $table->string('name')->nullable(false);
             $table->integer('ISBN');
             $table->decimal('value', 5,2);
         });
